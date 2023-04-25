@@ -72,19 +72,26 @@ function main {
 
             5)
             echo "Installing Chrome"
-            sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i google-chrome-stable_current_amd64.deb
+            sudo wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i chrome.deb
+            sudo apt-get install -f
+            rm -f chrome.deb
             ;;
 
             6)
             echo "Installing Visual Studio Code"
-            sudo wget -q -O "-" https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
-            sudo apt-get install codium
+            sudo wget -O vscode.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+            sudo dpkg -i vscode.deb
+            sudo apt-get install -f
+            rm -f vscode.deb
             ;;
 
             7)
             echo "Installing Discord"
-            sudo snap install discord
+            sudo wget -O discord.deb 'https://discord.com/api/download?platform=linux&format=deb'
+            sudo dpkg -i discord.deb
+            sudo apt-get install -f
+            rm -f discord.deb
             ;;
 
             8)

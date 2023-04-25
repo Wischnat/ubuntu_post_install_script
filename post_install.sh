@@ -126,7 +126,10 @@ function main {
 
             12)
             echo "Installing Android Studio"
-            snap install android-studio --classic
+            sudo apt-get install libcanberra-gtk-module android-sdk
+            sudo add-apt-repository ppa:maarten-fonville/android-studio -y
+            update
+            sudo apt install android-studio -y
             ;;
 
             13)

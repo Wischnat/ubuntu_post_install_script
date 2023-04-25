@@ -135,8 +135,13 @@ function main {
             13)
             # https://docs.flutter.dev/get-started/install/linux
             echo "Installing Flutter"
-            sudo snap install flutter --classic
-            flutter sdk-path
+            sudo wget -O flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.7.12-stable.tar.xz
+            sudo tar xf flutter.tar.xz
+            export PATH="$PATH:flutter/bin"
+            source $HOME/.bashrc
+            echo $PATH
+            which flutter
+            rm -f flutter.tar.xz
             ;;
         
 	    esac

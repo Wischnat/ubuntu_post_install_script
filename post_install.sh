@@ -42,6 +42,7 @@ function main {
         11 "PowerTop" off \
         12 "Android Studio" off \
         13 "Flutter (without setup)" off \
+        14 "OBS-Studio" off \
         2>&1 1>&3);
     clear
 
@@ -142,6 +143,11 @@ function main {
             echo $PATH
             which flutter
             rm -f flutter.tar.xz
+            ;;
+
+            14)
+            echo "Installing OBS-Studio"
+            sudo apt-get install obs-studio
             ;;
         
 	    esac

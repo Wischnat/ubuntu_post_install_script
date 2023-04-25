@@ -50,19 +50,19 @@ function main {
         case $choice in
             1)
             echo "Installing Git"
-            sudo apt-get install git 
+            sudo apt-get install git -y
             ;;
 
             2)
             echo "Installing Node 18"
             sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-            sudo apt-get install nodejs
+            sudo apt-get install nodejs -y
             ;;
 
             3)
             echo "Installing JDK 11"
-            sudo apt-get install openjdk-11-jre
-            sudo apt-get install openjdk-11-jdk openjdk-11-demo openjdk-11-doc openjdk-11-jre-headless openjdk-11-source
+            sudo apt-get install openjdk-11-jre -y
+            sudo apt-get install openjdk-11-jdk openjdk-11-demo openjdk-11-doc openjdk-11-jre-headless openjdk-11-source -y
             ;;
 
             4)
@@ -103,7 +103,7 @@ function main {
             sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
             echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
             update
-            sudo apt install brave-browser
+            sudo apt install brave-browser -y
             ;;
 
             10)
